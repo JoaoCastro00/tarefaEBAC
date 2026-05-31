@@ -12,6 +12,8 @@ public class Main{
         System.out.println();
         System.out.println("Digite seu nome:");
         nome = scan.nextLine();
+
+
         do {
             System.out.println("Perfeito "+nome+". Agora digite algum número de 0 a 100");
             numero = scan.nextInt();
@@ -31,13 +33,19 @@ public class Main{
             }else{
                 System.out.println(nome);
             }
-            System.out.println("Deseja repetir?(s/n)");
-            resp = scan.next().charAt(0);
+            do {
+
+                System.out.println("Deseja repetir?(s/n)");
+                resp = scan.next().toLowerCase().charAt(0);
+
+                if (resp != 's' && resp != 'n'){
+                    System.out.println("Somente (s) ou (n)");
+                }
 
 
+            }while(resp != 'n' && resp != 's');
+        }while (resp == 's');
 
-
-        }while(resp != 'n');
 
     }
 }

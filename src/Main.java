@@ -1,30 +1,44 @@
-import java.lang.*;
+import java.io.PrintStream;
 import java.util.*;
 
-public class Main {
-    public static void main(String[] args) {
+public class Main{
+    public static void main(String [] args){
         Scanner scan = new Scanner(System.in);
+        String nome;
+        char resp;
+        int numero;
 
-        System.out.println("Bem-Vindo Usuário! qual o seu nome? ");
-        String nome = scan.nextLine();
+        System.out.println("Bem vindo ao Meu programa!!");
+        System.out.println();
+        System.out.println("Digite seu nome:");
+        nome = scan.nextLine();
+        do {
+            System.out.println("Perfeito "+nome+". Agora digite algum número de 0 a 100");
+            numero = scan.nextInt();
 
-        try {
-            System.out.println("Ola " + nome + ", digite o primeiro número: ");
-            int num = scan.nextInt();
+            for( int i = 0; i <= numero; i++ ){
+                System.out.println(i);
 
-            System.out.println("Certo " + nome + ", agora digite o segundo número: ");
-            int num2 = scan.nextInt();
-
-
-            if (num > num2) {
-                System.out.println(nome + " o número " + num + " é maior que " + num2);
-            } else if (num < num2) {
-                System.out.println(nome + " o número " + num + " é menor que " + num2);
-            } else {
-                System.out.println(nome + " os números são iguais --> " + num + " e " + num2);
             }
-        }catch (Exception e){
-            System.out.println("Erro, só numeros são permitidos");
-        }
+            System.out.println();
+            for (int i = numero; i >= 0; i--) {
+                System.out.println(i);
+            }
+            if (nome.length() >= 6){
+                for (int i = 0; i <= numero; i++   ){
+                    System.out.println(nome);
+                }
+            }else{
+                System.out.println(nome);
+            }
+            System.out.println("Deseja repetir?(s/n)");
+            resp = scan.next().charAt(0);
+
+
+
+
+        }while(resp != 'n');
+
     }
 }
+
